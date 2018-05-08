@@ -1,0 +1,14 @@
+Main challenges of this project:
+1) Some 13F-HR files do not contain a .xml file.
+    - Luckily, the results that didn't were not the ones at the top of the list. I was not able to find examples of which there were;
+      If I did, I would have caught Exceptions between lines 33-37.
+      
+2) On the search results page, the <td> tags for the document date does not have an "id" associated. This made grabbing the id difficult.
+    - I initially wanted to implement a dictionary that would store up to 100 results and allow the user to pick which ones to redirect to       the .tsv file. This would have allowed the user to choose any document in O(1) time. However, due to the dates not having their own       id, I decided not to implement this considering time constraints.
+
+3) The .xml files do not contain the same tag formatting
+    - Some .xml files had an <infoTable> tag that I could easily parse all data from, while some had an <nst:infoTable> tag. This was           solved by regular expression pattern matching so that any tag that included <infoTable> was parsed.
+    
+4) Most InfoTables contain newline characters, which made it easy to grab each row without grabbing each attribute separately.
+   However, there were a few that did not have any sort of delimiter and I was not able to parse it. (Example: 0001508195)
+    - The only solution I believe would solve this is manually pulling child data from the <infoTable> tags.
