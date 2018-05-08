@@ -1,2 +1,15 @@
 # EDGAR_Web_Scraper
-Python Program to Parse Fund Holdings Given a CIK or Ticker
+
+Input: CIK or Ticker number <br>
+Output: .tsv file containing all fund holding information
+
+## Prerequisites
+```
+$ pip install beautifulsoup4
+$ pip install requests
+```
+
+## Running via Command-Line
+
+`$ python EDGAR_parser.py`
+
